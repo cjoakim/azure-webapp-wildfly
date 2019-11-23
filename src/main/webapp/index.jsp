@@ -3,9 +3,9 @@
 <head>
   <title>Wildfly Web App</title>
 </head>
-<body>
-<h1>azure-webapp-wildfly</h1>
-<h2>created with maven</h2>
-<p>version 2019/11/23 11:55</p>
+<body align='center'>
+  <h1>azure-webapp-wildfly</h1>
+  <p>version: 2019/11/23 13:22</p>
+  <p>current time: <%= (new java.util.Date()).toLocaleString()%></p>
 </body>
 </html>
