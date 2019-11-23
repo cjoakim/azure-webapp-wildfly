@@ -42,6 +42,32 @@ $ curl -X POST -d 'key=cat&value=elsa' 'http://localhost:3000/redis' | jq
 ```
 $ curl "https://cjoakim-wildfly.azurewebsites.net"
 $ curl "https://cjoakim-wildfly.azurewebsites.net/ping"
-$ curl "http://cjoakim-wildfly.azurewebsites.net/redis?key=cat" | jq 
+
+$ curl "http://cjoakim-wildfly.azurewebsites.net/redis?key=cat" | jq
+{
+  "date": "2019/11/23 19:30:00",
+  "epoch": 1574537400033,
+  "operation": "get",
+  "value": "Miles",
+  "key": "cat"
+}
+
 $ curl -X POST -d 'key=cat&value=Elsa' 'http://cjoakim-wildfly.azurewebsites.net/redis' | jq
+{
+  "date": "2019/11/23 19:32:49",
+  "result": "OK",
+  "epoch": 1574537569785,
+  "operation": "set",
+  "value": "Elsa",
+  "key": "cat"
+}
+
+$ curl "http://cjoakim-wildfly.azurewebsites.net/redis?key=cat" | jq
+{
+  "date": "2019/11/23 19:33:17",
+  "epoch": 1574537597203,
+  "operation": "get",
+  "value": "Elsa",
+  "key": "cat"
+}
 ```
