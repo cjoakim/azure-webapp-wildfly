@@ -3,6 +3,12 @@
 # Compile the Java code and package the WAR file for this app.
 # Chris Joakim, Microsoft, 2019/11/23
 
+date -u > src/main/resources/build_date.txt
+cat src/main/resources/build_date.txt
+
+whoami > src/main/resources/build_user.txt
+cat src/main/resources/build_user.txt
+
 echo 'executing mvn package ...'
 mvn clean package
 
