@@ -11,9 +11,9 @@
 # Chris Joakim, Microsoft, 2019/11/23
 
 # Variables
-rg="cjoakim-wildfly5"
-appName="cjoakim-wildfly5"
-planName="cjoakim-wildfly5-plan"
+rg="cjoakim-wildfly"
+appName="cjoakim-wildfly"
+planName="cjoakim-wildfly-plan"
 location="EastUS"
 registryPath="cjoakimacr.azurecr.io/azure-webapp-wildfly:latest"
 

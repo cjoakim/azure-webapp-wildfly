@@ -5,7 +5,7 @@
 </head>
 <body align='center'>
   <h1>azure-webapp-wildfly</h1>
-  <p>version: 2019/11/23 13:22</p>
+  <p>version: 2019/11/23 13:53</p>
   <p>current time: <%= (new java.util.Date()).toLocaleString()%></p>
 </body>
 </html>

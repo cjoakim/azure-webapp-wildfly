@@ -22,6 +22,7 @@ public class PingServlet extends javax.servlet.http.HttpServlet {
         HashMap<String, Object> map = new HashMap<String, Object>();
         map.put("date", dateFormat.format(date));
         map.put("epoch", epoch);
+        map.put("redis_host", "" + System.getenv("AZURE_REDISCACHE_HOST"));
 
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json");
