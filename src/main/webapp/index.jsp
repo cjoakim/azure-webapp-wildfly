@@ -6,6 +6,6 @@
 <body>
 <h1>azure-webapp-wildfly</h1>
 <h2>created with maven</h2>
-<p>version 2019/11/23 10:33</p>
+<p>version 2019/11/23 11:55</p>
 </body>
 </html>
