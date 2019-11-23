@@ -45,4 +45,3 @@ $ curl "https://cjoakim-wildfly.azurewebsites.net/ping"
 $ curl "http://cjoakim-wildfly.azurewebsites.net/redis?key=cat" | jq 
 $ curl -X POST -d 'key=cat&value=Elsa' 'http://cjoakim-wildfly.azurewebsites.net/redis' | jq
 ```
-
