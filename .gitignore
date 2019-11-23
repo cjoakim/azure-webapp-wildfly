@@ -1,3 +1,17 @@
+# cj
+
+**/.DS_Store
+**/.classpath
+**/.idea
+**/.project
+**/.settings
+**/*.war
+
+**/docker-dir/deployments/*.war 
+**/tmp/
+
+# generated
+
 target/
 pom.xml.tag
 pom.xml.releaseBackup
