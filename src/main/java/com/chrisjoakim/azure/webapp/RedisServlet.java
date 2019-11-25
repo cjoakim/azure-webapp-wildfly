@@ -11,6 +11,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisShardInfo;
 
+/**
+ * Servlet class mapped to the /redis endpoint.
+ * GET requests lookup and return the given 'key' value from Azure Redis Cache.
+ * POST requests set the given 'key' and 'value' in Azure Redis Cache.
+ * 
+ * Chris Joakim, Microsoft, 2019/11/25
+ */
 public class RedisServlet extends javax.servlet.http.HttpServlet {
 
     protected void doGet(

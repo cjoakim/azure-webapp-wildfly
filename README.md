@@ -11,8 +11,8 @@ The Web App has an index HTML page, and two simple endpoints which return JSON:
 ```
 $ git clone https://github.com/cjoakim/azure-webapp-wildfly.git
 
-$ ./create-war.sh
-$ ./create-container.sh
+$ ./build-war.sh
+$ ./build-container.sh
 $ ./run-container.sh
 ```
 
@@ -41,7 +41,15 @@ $ curl -X POST -d 'key=cat&value=elsa' 'http://localhost:3000/redis' | jq
 
 ```
 $ curl "https://cjoakim-wildfly.azurewebsites.net"
-$ curl "https://cjoakim-wildfly.azurewebsites.net/ping"
+
+$ curl "https://cjoakim-wildfly.azurewebsites.net/ping" | jq
+{
+  "date": "2019/11/23 20:46:29",
+  "build_date": "Sat Nov 23 20:43:23 UTC 2019",
+  "epoch": 1574541989818,
+  "build_user": "vsts",
+  "redis_host": "cjoakimredis.redis.cache.windows.net"
+}
 
 $ curl "http://cjoakim-wildfly.azurewebsites.net/redis?key=cat" | jq
 {

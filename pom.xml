@@ -19,8 +19,13 @@
         <version.surefire.plugin>2.22.1</version.surefire.plugin>
         <version.failsafe.plugin>2.22.1</version.failsafe.plugin>
         <version.war.plugin>3.2.2</version.war.plugin>
+
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+
+        <version.jedis>2.9.0</version.jedis>
+        <version.jackson.core>2.9.6</version.jackson.core>
+        <version.jackson.databind>2.9.6</version.jackson.databind>
     </properties>
     
     <dependencyManagement>
@@ -86,19 +91,19 @@
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-            <version>2.9.0</version>
+            <version>${version.jedis}</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.9.6</version>
+            <version>${version.jackson.core}</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.6</version>
+            <version>${version.jackson.databind}</version>
         </dependency>
 
         <!-- Test scope dependencies -->

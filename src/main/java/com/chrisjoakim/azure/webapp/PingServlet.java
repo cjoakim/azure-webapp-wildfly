@@ -9,10 +9,34 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.text.*;
 import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Servlet class mapped to the /ping endpoint.
+ * Both GET and POST requests return the same information, including
+ * current time, build time, and build user.
+ * The init() method sets two static variables used in index.jsp.
+ * 
+ * Chris Joakim, Microsoft, 2019/11/25
+ */
 public class PingServlet extends javax.servlet.http.HttpServlet {
+
+    public static String buildUser = "none";
+    public static String buildDate = "none";
+
+    public void init(ServletConfig config) throws ServletException {
+        
+        try {
+            buildUser = getResourceText("build_user.txt");
+            buildDate = getResourceText("build_date.txt");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
 
     protected void doGet(
         javax.servlet.http.HttpServletRequest request,
