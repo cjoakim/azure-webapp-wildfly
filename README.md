@@ -37,6 +37,32 @@ $ curl -X POST -d 'key=cat&value=elsa' 'http://localhost:3000/redis' | jq
 - Execute **az login** from your command line
 - Execute the **create-azure-webapp.sh** shell script to create Azure resources in your subscription.  Modify this script for your own resource names.
 
+The above shell script creates a **Linux App Service** which uses a given 
+Docker Container in Azure Container Registry.
+
+The Docker container itself is based on **jboss/wildfly** per the Dockerfile below:
+```
+FROM jboss/wildfly
+
+COPY deployments/root.war /opt/jboss/wildfly/standalone/deployments/root.war
+```
+
+---
+
+The App Service should have the following settings/environment variables 
+set by the **create-azure-webapp.sh** shell script.  The application code will
+read the various **AZURE_REDISCACHE_...*** environment variables in order to
+connect to Azure Redis Cache.
+
+![webapp-app-settings](img/webapp-app-settings.png)
+
+---
+
+These **Container Settings** enable CI/CD by the **Azure DevOps Pipeline**;
+see file [azure-pipelines.yml](azure-pipelines.yml)
+
+![webapp-container-settings](img/webapp-container-settings.png)
+
 ## Invoking the App with Curl Vs Azure
 
 ```
