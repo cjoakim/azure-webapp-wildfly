@@ -1,5 +1,5 @@
 # DevOps Build & Release Pipeline
-# Chris Joakim, Microsoft, 2019/11/23
+# Chris Joakim, Microsoft, 2019/11/25
 
 trigger:
 - master
@@ -22,8 +22,19 @@ steps:
   displayName: 'display the pipeline variables'
   condition: always()
 
-- script: mvn --version
-  displayName: 'mvn --version'
+- script: sudo apt-get install python3-venv
+  displayName: 'install python3-venv'
+
+- script: ./gen-config-files.sh sample_xml $(AZURE-ACR-USER-NAME) $(AZURE-ACR-USER-PASS) $(DOCKER_ID)
+  displayName: 'generate configuration files'
+  # This displays the following, note how the secrets are shown as *** but their actual lengths are shown.
+  # <?xml version="1.0" encoding="UTF-8"?>
+  # <sample>
+  #     <property name="name"    value="***"/>
+  #     <property name="pass"    value="***"/>
+  #     <property name="namelen" value="10"/>
+  #     <property name="passlen" value="32"/>
+  # </sample>
 
 - script: date -u > src/main/resources/build_date.txt
   displayName: 'create build date resource file'
