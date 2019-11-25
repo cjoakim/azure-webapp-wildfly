@@ -1,6 +1,6 @@
 # azure-webapp-wildfly
 
-A containerized Wildfly web application deployed to Azure App Service.
+A containerized Wildfly Java web application deployed to a Linux Azure App Service
 
 The Web App has an index HTML page, and two simple endpoints which return JSON:
 - /ping
