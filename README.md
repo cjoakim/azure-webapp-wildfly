@@ -6,14 +6,36 @@ The Web App has an index HTML page, and two simple endpoints which return JSON:
 - /ping
 - /redis
 
+## Installing Docker on your Development Workstation
+
+Download and execute an installer from https://docs.docker.com/v17.09/engine/installation/
+
 ## Building & Testing on Developer Workstation
+
+### On Linux or macOS, in Terminal
 
 ```
 $ git clone https://github.com/cjoakim/azure-webapp-wildfly.git
+$ cd azure-webapp-wildfly
 
 $ ./build-war.sh
 $ ./build-container.sh
+
 $ ./run-container.sh
+$ ./run-container-no-redis.sh   (the /redis endpoint will fail; other will work)
+```
+
+### On Windows, in PowerShell
+
+```
+> git clone https://github.com/cjoakim/azure-webapp-wildfly.git
+> cd azure-webapp-wildfly
+
+> .\build-war.ps1
+> .\build-container.ps1
+
+> .\run-container.ps1
+> .\run-container-no-redis.sh   (the /redis endpoint will fail; other will work)
 ```
 
 ## Invoking the App with Curl Vs Localhost
