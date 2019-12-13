@@ -7,7 +7,7 @@ cd docker-dir
 echo 'building ...'
 docker build -t cjoakim/azure-webapp-wildfly .
 
-echo 'listing image ...'
-docker images | grep azure-webapp-wildfly
+echo 'listing images ...'
+docker images
 
 cd ..
