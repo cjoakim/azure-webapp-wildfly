@@ -17,5 +17,3 @@ jar tvf target/root.war
 echo 'copying war file to docker-dir/deployments directory...'
 cp target/root.war docker-dir/deployments
 
-echo 'listing contents of docker-dir/deployments ...'
-ls -al docker-dir/deployments
