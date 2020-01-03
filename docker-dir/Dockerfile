@@ -1,4 +1,6 @@
 FROM jboss/wildfly
+# FROM jboss/wildfly:10.1.0.Final
+# both of the above "FROM" base-images work with this app - cjoakim 2020/01/03
 
 COPY deployments/root.war /opt/jboss/wildfly/standalone/deployments/root.war
 
